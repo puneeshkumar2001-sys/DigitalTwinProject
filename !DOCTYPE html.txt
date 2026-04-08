@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Flight Digital Twin</title>
+    <!-- This line imports the CesiumJS library and its styling -->
+    <script src="https://cesium.com/downloads/cesiumjs/releases/1.107/Build/Cesium/Cesium.js"></script>
+    <link href="https://cesium.com/downloads/cesiumjs/releases/1.107/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <style>
+        html, body, #cesiumContainer {
+            width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div id="cesiumContainer"></div>
+    <script>
+        // This is where all our JavaScript code will go.
+
+        // You need a free Cesium ion access token. Go to cesium.com to get one.
+        Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1YTg2MTAxYi1iNjMxLTQwNmQtOTMyOC03NTI2ZmE5M2UwOWQiLCJpZCI6NDE1MTMwLCJpYXQiOjE3NzU2MTM2Nzl9.1SS_j8f8peTSjnCH5hoDT0nw-94ZhNCrgzsUt9hJ9H8';
+
+        // 1. SET UP THE WORLD
+        const viewer = new Cesium.Viewer('cesiumContainer', {
+            terrainProvider: Cesium.createWorldTerrain()
+        });
+
